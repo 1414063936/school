@@ -1,0 +1,31 @@
+{
+  "system_name": "Database Operation Support",
+  "login_name": "Login Name",
+  "password": "Password",
+  "login": "Login",
+  "user_setting": "User Setting",
+  "change_password": "Change Password",
+  "change_user": "Change User",
+  "logout": "Logout",
+  "menu": {
+    "Home": "Home",
+    "Student": "Student",
+    "Student_Base": "Basic information",
+    "Student_Statistics": "Statistics",
+    "Teacher": "Teacher",
+    "Teacher_Base": "Basic information",
+    "Teacher_Statistics": "Statistics",
+    "Course": "Course",
+    "Student_Course": "Student Course",
+    "Teacher_Course": "Teacher Course",
+    "Grade": "Grade",
+    "Award": "Award",
+    "Country_Award": "Country Award",
+    "Country_Award_List": "Country Award List",
+    "Award_First_List": "Award First List",
+    "Award_Second_List": "Award Second List",
+    "Grade_List": "Grade Info",
+    "System_Manage": "System Manage",
+    "User": "User"
+  }
+}

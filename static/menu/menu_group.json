@@ -1,0 +1,65 @@
+{
+  "Student": {
+    "name": "Student",
+    "type": "menu",
+    "meta": {
+      "label": "menu.Student",
+      "$label": "学生信息",
+      "iconClass": "el-icon-user"
+    }
+  },
+  "Teacher": {
+    "name": "Teacher",
+    "type": "menu",
+    "meta": {
+      "label": "menu.Teacher",
+      "$label": "教师信息",
+      "iconClass": "el-icon-s-custom"
+    }
+  },
+  "Course": {
+    "name": "Course",
+    "type": "menu",
+    "meta": {
+      "label": "menu.Course",
+      "$label": "课程",
+      "iconClass": "el-icon-notebook-1"
+    }
+  },
+  "Grade": {
+    "name": "Grade",
+    "type": "menu",
+    "meta": {
+      "label": "menu.Grade",
+      "$label": "成绩",
+      "iconClass": "el-icon-receiving"
+    }
+  },
+  "Award": {
+    "name": "Award",
+    "type": "menu",
+    "meta": {
+      "label": "menu.Award",
+      "$label": "奖学金",
+      "iconClass": "el-icon-finished"
+    }
+  },
+  "Country_Award": {
+    "name": "Country_Award",
+    "type": "menu",
+    "meta": {
+      "label": "menu.Country_Award",
+      "$label": "国家奖学金",
+      "iconClass": ""
+    }
+  },
+  "System_Manage": {
+    "name": "System_Manage",
+    "type": "menu",
+    "meta": {
+      "label": "menu.System_Manage",
+      "$label": "系统管理",
+      "iconClass": "el-icon-setting"
+    }
+  }
+}

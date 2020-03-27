@@ -1,0 +1,31 @@
+{
+  "system_name": "數據庫運維支持系統",
+  "login_name": "登錄名",
+  "password": "密碼",
+  "login": "登錄",
+  "user_setting": "用戶設置",
+  "change_password": "修改修改",
+  "change_user": "帳號修改",
+  "logout": "退出登錄",
+  "menu": {
+    "Home": "主頁",
+    "Student": "學生信息",
+    "Student_Base": "基礎信息",
+    "Student_Statistics": "統計",
+    "Teacher": "教師",
+    "Teacher_Base": "基礎信息",
+    "Teacher_Statistics": "統計",
+    "Course": "課程",
+    "Student_Course": "學生課程信息",
+    "Teacher_Course": "教師課程信息",
+    "Grade": "成績",
+    "Award": "獎學金",
+    "Country_Award": "國家獎學金",
+    "Country_Award_List": "國家獎學金名單",
+    "Award_First_List": "壹等獎學金名單",
+    "Award_Second_List": "二等獎學金名單",
+    "Grade_List": "成績信息",
+    "System_Manage": "系統管理",
+    "User": "用戶列表"
+  }
+}

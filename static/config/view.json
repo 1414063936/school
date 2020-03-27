@@ -1,0 +1,74 @@
+{
+  "Student_Base": {
+    "props": {
+      "toolbar": [],
+      "table": {
+        "url": "/{{api_project}}/student/list",
+        "columnsUrl": "/page/table_column?id=Student_List",
+        "pagination": {
+          "enable": true
+        }
+      }
+    }
+  },
+  "Student_Statistics": {
+    "props": {
+      "toolbar": [],
+      "chart": {
+        "title": ""
+      },
+      "text": "学生信息统计"
+    }
+  },
+  "Teacher_Base": {
+    "props": {
+      "toolbar": [],
+      "table": {
+        "url": "/{{api_project}}/teacher/list",
+        "columnsUrl": "/page/table_column?id=Teacher_List",
+        "pagination": {
+          "enable": true
+        }
+      }
+    }
+  },
+  "Teacher_Statistics": {
+    "props": {
+      "toolbar": [],
+      "chart": {
+        "title": ""
+      },
+      "text": "教师信息统计"
+    }
+  },
+  "Student_Course": {
+    "props": {
+      "text": "学生课程"
+    }
+  },
+  "Teacher_Course": {
+    "props": {
+      "text": "教师课程"
+    }
+  },
+  "Country_Award_List": {
+    "props": {
+      "text": "国家奖学金"
+    }
+  },
+  "Award_First_List": {
+    "props": {
+      "text": "一等奖学金"
+    }
+  },
+  "Award_Second_List": {
+    "props": {
+      "text": "二等奖学金"
+    }
+  },
+  "Grade_List": {
+    "props": {
+      "text": "成绩信息"
+    }
+  }
+}

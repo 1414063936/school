@@ -1,0 +1,70 @@
+html {
+  font-size: 12px;
+}
+
+/* Menu */
+.el-menu {
+  border-right: 0 solid!important;
+}
+
+.el-submenu__title {
+  font-size: 12px;
+}
+
+.el-menu-item {
+  font-size: 12px;
+}
+
+/* DropDown */
+/*.el-dropdown {*/
+  /*padding: 3px 0;*/
+  /*font-size: 12px;*/
+/*}*/
+
+/*.el-dropdown-menu__item {*/
+  /*font-size: 12px;*/
+  /*line-height: 24px;*/
+/*}*/
+
+/*
+  滚动条样式
+ */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: #FFFFFF;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px lightgray;
+  background-color: grey;
+}
+::-webkit-scrollbar-track {
+
+}
+
+/* form */
+.el-form-item--mini .el-form-item__content, .el-form-item--mini .el-form-item__label {
+  font-size: 12px;
+}
+
+/* table expand */
+.el-table__expanded-cell .el-form .el-form-item {
+  margin-bottom: 0;
+}
+
+.el-table__expanded-cell .el-form .el-form-item__label {
+  color: #99a9bf;
+}
+
+
+
+.el-button--text {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+}
+
+.el-dropdown {
+  font-size: 12px;
+}

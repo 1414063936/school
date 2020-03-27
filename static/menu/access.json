@@ -1,0 +1,99 @@
+{
+  "access": [
+    {
+      "level": 100,
+      "menus": [
+        {
+          "type": "item",
+          "obj": "Home"
+        },
+        {
+          "type": "menu",
+          "obj": "Student",
+          "children": [
+            {
+              "type": "item",
+              "obj": "Student_Base"
+            },
+            {
+              "type": "item",
+              "obj": "Student_Statistics"
+            }
+          ]
+        },
+        {
+          "type": "menu",
+          "obj": "Teacher",
+          "children": [
+            {
+              "type": "item",
+              "obj": "Teacher_Base"
+            },
+            {
+              "type": "item",
+              "obj": "Teacher_Statistics"
+            }
+          ]
+        },
+        {
+          "type": "menu",
+          "obj": "Course",
+          "children": [
+            {
+              "type": "item",
+              "obj": "Student_Course"
+            },
+            {
+              "type": "item",
+              "obj": "Teacher_Course"
+            }
+          ]
+        },
+        {
+          "type": "menu",
+          "obj": "Grade",
+          "children": [
+            {
+              "type": "menu",
+              "obj": "Award",
+              "children": [
+                {
+                  "type": "menu",
+                  "obj": "Country_Award",
+                  "children": [
+                    {
+                      "type": "item",
+                      "obj": "Country_Award_List"
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "obj": "Award_First_List"
+                },
+                {
+                  "type": "item",
+                  "obj": "Award_Second_List"
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "obj": "Grade_List"
+            }
+          ]
+        },
+        {
+          "type": "menu",
+          "obj": "System_Manage",
+          "children": [
+            {
+              "type": "item",
+              "obj": "User"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "api_project": "api",
+  "langs": [
+    {"label": "En", "value": "en"},
+    {"label": "简中", "value": "zh_CN"},
+    {"label": "繁中", "value": "zh_TW"}
+  ],
+  "defaults": {
+    "lang": "zh_CN"
+  },
+  "echarts": {
+    "theme": "walden"
+  }
+}

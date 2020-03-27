@@ -1,0 +1,111 @@
+{
+  "Home": {
+    "name": "Home",
+    "path": "/home",
+    "type": "item",
+    "meta": {
+      "label": "menu.Home",
+      "$label": "主页",
+      "iconClass": "el-icon-material-home"
+    }
+  },
+  "Student_Base": {
+    "name": "Student_Base",
+    "path": "/Student/Student_Base",
+    "type": "item",
+    "meta": {
+      "label": "menu.Student_Base",
+      "$label": "基础信息"
+    }
+  },
+  "Student_Statistics": {
+    "name": "Student_Statistics",
+    "path": "/Student/Student_Statistics",
+    "type": "item",
+    "meta": {
+      "label": "menu.Student_Statistics",
+      "$label": "统计"
+    }
+  },
+  "Teacher_Base": {
+    "name": "Teacher_Base",
+    "path": "/Teacher/Teacher_Base",
+    "type": "item",
+    "meta": {
+      "label": "menu.Teacher_Base",
+      "$label": "基础信息"
+    }
+  },
+  "Teacher_Statistics": {
+    "name": "Teacher_Statistics",
+    "path": "/Teacher/Teacher_Statistics",
+    "type": "item",
+    "meta": {
+      "label": "menu.Teacher_Statistics",
+      "$label": "统计"
+    }
+  },
+  "Student_Course": {
+    "name": "Student_Course",
+    "path": "/Course/Student_Course",
+    "type": "item",
+    "meta": {
+      "label": "menu.Student_Course",
+      "$label": "学生课程信息"
+    }
+  },
+  "Teacher_Course": {
+    "name": "Teacher_Course",
+    "path": "/Course/Teacher_Course",
+    "type": "item",
+    "meta": {
+      "label": "menu.Teacher_Course",
+      "$label": "教师课程信息"
+    }
+  },
+  "Grade_List": {
+    "name": "Grade_List",
+    "path": "/Grade/Grade_List",
+    "type": "item",
+    "meta": {
+      "label": "menu.Grade_List",
+      "$label": "成绩信息"
+    }
+  },
+  "Award_First_List": {
+    "name": "Award_First_List",
+    "path": "/Grade/Award/Award_First_List",
+    "type": "item",
+    "meta": {
+      "label": "menu.Award_First_List",
+      "$label": "一等奖学金名单"
+    }
+  },
+  "Award_Second_List": {
+    "name": "Award_Second_List",
+    "path": "/Grade/Award/Award_Second_List",
+    "type": "item",
+    "meta": {
+      "label": "menu.Award_Second_List",
+      "$label": "二等奖学金名单"
+    }
+  },
+  "Country_Award_List": {
+    "name": "Country_Award_List",
+    "path": "/Grade/Award/Country_Award/Country_Award_List",
+    "type": "item",
+    "meta": {
+      "label": "menu.Country_Award_List",
+      "$label": "国家奖学金名单"
+    }
+  },
+  "User": {
+    "name": "User",
+    "path": "/System_Manage/User",
+    "type": "item",
+    "meta": {
+      "label": "menu.User",
+      "$label": "用户管理"
+    }
+  }
+}

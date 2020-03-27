@@ -1,0 +1,31 @@
+{
+  "system_name": "数据库运维支持系统",
+  "login_name": "登录名",
+  "password": "密码",
+  "login": "登录",
+  "user_setting": "用户设置",
+  "change_password": "修改修改",
+  "change_user": "帐号修改",
+  "logout": "退出登录",
+  "menu": {
+    "Home": "主页",
+    "Student": "学生信息",
+    "Student_Base": "基础信息",
+    "Student_Statistics": "统计",
+    "Teacher": "教师",
+    "Teacher_Base": "基础信息",
+    "Teacher_Statistics": "统计",
+    "Course": "课程",
+    "Student_Course": "学生课程信息",
+    "Teacher_Course": "教师课程信息",
+    "Grade": "成绩",
+    "Award": "奖学金",
+    "Country_Award": "国家奖学金",
+    "Country_Award_List": "国家奖学金名单",
+    "Award_First_List": "一等奖学金名单",
+    "Award_Second_List": "二等奖学金名单",
+    "Grade_List": "成绩信息",
+    "System_Manage": "系统管理",
+    "User": "用户列表"
+  }
+}
