@@ -1,22 +1,21 @@
 <template>
   <my-panel :items="LAYOUT">
     <template slot="main">
-      <div style="height: 35px">
-        <el-button type="primary" icon="el-icon-refresh" @click="refreshData"></el-button>
-      </div>
+      <my-toolbar auto-load-items :url="toolbar[0].url" @click#refresh="refreshData"></my-toolbar>
       <div style="height: calc(100% - 35px)">
-        <myTable
+        <my-table
           ref="autoTable"
           auto-load-data
           auto-load-columns
           :show-pagination="table.pagination.enable"
+          :expand="table.expand"
           :url="table.url"
           :columnsUrl="table.columnsUrl"
           :data="tableData"
           :columns="tableColumns"
           @click#update="updateUser"
           @click#delete="deleteUser">
-        </myTable>
+        </my-table>
       </div>
     </template>
   </my-panel>
@@ -27,8 +26,10 @@ import { mapGetters } from 'vuex'
 import ElRow from 'element-ui/lib/row'
 import ElCol from 'element-ui/lib/col'
 import MyPanel from '../../../components/panel/index.vue'
+import MyToolbar from '../../../components/toolbar/index.vue'
 export default {
   components: {
+    MyToolbar,
     MyPanel,
     [ElRow.name]: ElRow,
     [ElCol.name]: ElCol

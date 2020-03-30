@@ -6,14 +6,14 @@
           <span style="display: inline-block !important;">dbSonar</span>
         </div>
       </el-menu-item>
-      <myMenuItem :menus="sideBarNavMenus" :max-lable-length="25"></myMenuItem>
+      <my-menu-item :menus="sideBarNavMenus" :max-lable-length="25"></my-menu-item>
     </el-menu>
     <div class="main-container">
       <el-menu class="main-header" mode="horizontal" :background-color="backgroundColor" :text-color="textColor" :active-text-color="activeTextColor">
         <div class="left-header">
-          <myHamburger class="left-header-item" :isActive="active" @toggle-click="toggleSideBar"></myHamburger>
+          <my-hamburger class="left-header-item" :isActive="active" @toggle-click="toggleSideBar"></my-hamburger>
           <span class="left-header-item">
-            <myBreadCrumb class="left-header-item"></myBreadCrumb>
+            <my-bread-crumb class="left-header-item"></my-bread-crumb>
           </span>
         </div>
         <div class="right-header">

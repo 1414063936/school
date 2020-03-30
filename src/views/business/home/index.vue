@@ -6,21 +6,29 @@
           <span><i style="font-size: 16px;" class="el-icon-loading"></i></span>
           <el-dropdown trigger="hover" style="float: right">
             <i style="font-size: 16px; cursor: pointer" class="el-icon-menu"></i>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>旋转</el-dropdown-item>
+              <el-dropdown-item>跳跃</el-dropdown-item>
+            </el-dropdown-menu>
           </el-dropdown>
         </div>
         <v-chart style="width: 100%;height: 100%" :options="polar" :autoresize="true" theme="walden"></v-chart>
       </el-card>
     </template>
     <template slot="1-2">
-      <el-card class="box-card" :body-style="cardBodyStyle" style="width: 100%; height: 100%;">
+      <my-card>
         <div slot="header" class="clearfix">
           <span><i style="font-size: 16px;" class="el-icon-loading"></i></span>
           <el-dropdown trigger="hover" style="float: right">
             <i style="font-size: 16px; cursor: pointer" class="el-icon-menu"></i>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>旋转</el-dropdown-item>
+              <el-dropdown-item>跳跃</el-dropdown-item>
+            </el-dropdown-menu>
           </el-dropdown>
         </div>
         <v-chart style="width: 100%;height: 100%" :options="polar" :autoresize="true" theme="walden"></v-chart>
-      </el-card>
+      </my-card>
     </template>
     <template slot="1-3">
       <el-card class="box-card" :body-style="cardBodyStyle" style="width: 100%; height: 100%;">
@@ -28,43 +36,59 @@
           <span><i style="font-size: 16px;" class="el-icon-loading"></i></span>
           <el-dropdown trigger="hover" style="float: right">
             <i style="font-size: 16px; cursor: pointer" class="el-icon-menu"></i>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>旋转</el-dropdown-item>
+              <el-dropdown-item>跳跃</el-dropdown-item>
+            </el-dropdown-menu>
           </el-dropdown>
         </div>
         <v-chart style="width: 100%;height: 100%" :options="polar" :autoresize="true" theme="walden"></v-chart>
       </el-card>
     </template>
     <template slot="2-1">
-      <el-card class="box-card" :body-style="cardBodyStyle" style="width: 100%; height: 100%;">
+      <my-card>
         <div slot="header" class="clearfix">
           <span><i style="font-size: 16px;" class="el-icon-loading"></i></span>
           <el-dropdown trigger="hover" style="float: right">
             <i style="font-size: 16px; cursor: pointer" class="el-icon-menu"></i>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>旋转</el-dropdown-item>
+              <el-dropdown-item>跳跃</el-dropdown-item>
+            </el-dropdown-menu>
           </el-dropdown>
         </div>
         <v-chart style="width: 100%;height: 100%" :options="polar" :autoresize="true" theme="walden"></v-chart>
-      </el-card>
+      </my-card>
     </template>
     <template slot="2-2">
-      <el-card class="box-card" :body-style="cardBodyStyle" style="width: 100%; height: 100%;">
+      <my-card>
         <div slot="header" class="clearfix">
           <span><i style="font-size: 16px;" class="el-icon-loading"></i></span>
           <el-dropdown trigger="hover" style="float: right">
             <i style="font-size: 16px; cursor: pointer" class="el-icon-menu"></i>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>旋转</el-dropdown-item>
+              <el-dropdown-item>跳跃</el-dropdown-item>
+            </el-dropdown-menu>
           </el-dropdown>
         </div>
         <v-chart style="width: 100%;height: 100%" :options="polar" :autoresize="true" theme="walden"></v-chart>
-      </el-card>
+      </my-card>
     </template>
     <template slot="2-3">
-      <el-card class="box-card" :body-style="cardBodyStyle" style="width: 100%; height: 100%;">
+      <my-card>
         <div slot="header" class="clearfix">
           <span><i style="font-size: 16px;" class="el-icon-loading"></i></span>
           <el-dropdown trigger="hover" style="float: right">
             <i style="font-size: 16px; cursor: pointer" class="el-icon-menu"></i>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>旋转</el-dropdown-item>
+              <el-dropdown-item>跳跃</el-dropdown-item>
+            </el-dropdown-menu>
           </el-dropdown>
         </div>
         <v-chart style="width: 100%;height: 100%" :options="polar" :autoresize="true" theme="walden"></v-chart>
-      </el-card>
+      </my-card>
     </template>
   </my-panel>
 </template>
@@ -73,10 +97,9 @@
 import ElRow from 'element-ui/lib/row'
 import ElCol from 'element-ui/lib/col'
 import { mapGetters } from 'vuex'
-import MyPanel from '../../../components/panel/index.vue'
+
 export default {
   components: {
-    MyPanel,
     [ElRow.name]: ElRow,
     [ElCol.name]: ElCol
   },

@@ -1,11 +1,19 @@
 {
   "Student_Base": {
     "props": {
-      "toolbar": [],
+      "toolbar": [
+        {
+          "id": "top_toolbar",
+          "url": "/page/toolbar?id=Student_List"
+        }
+      ],
       "table": {
         "url": "/{{api_project}}/student/list",
         "columnsUrl": "/page/table_column?id=Student_List",
         "pagination": {
+          "enable": true
+        },
+        "expand": {
           "enable": true
         }
       }
@@ -22,12 +30,20 @@
   },
   "Teacher_Base": {
     "props": {
-      "toolbar": [],
+      "toolbar": [
+        {
+          "id": "top_toolbar",
+          "url": "/page/toolbar?id=Student_List"
+        }
+      ],
       "table": {
         "url": "/{{api_project}}/teacher/list",
         "columnsUrl": "/page/table_column?id=Teacher_List",
         "pagination": {
           "enable": true
+        },
+        "expand": {
+          "enable": false
         }
       }
     }

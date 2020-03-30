@@ -17,11 +17,12 @@
           <el-table-column type="selection" width="48"></el-table-column>
         </template>
         <el-table-column v-if="indexed" type="index" width="48"></el-table-column>
-        <el-table-column v-if="expand" type="expand">
+        <el-table-column v-if="expand.enable" type="expand">
           <template slot-scope="scope">
             <el-form label-position="right" label-width="100px" size="mini" class="table-expand">
               <el-form-item
                 v-for="(column, key) in internalColumns"
+                v-if="column.prop !== 'operations'"
                 :key="key"
                 :label="$t(column.label)">
                 <span style="white-space: pre-line;">
@@ -121,8 +122,12 @@ export default {
       default: false
     },
     expand: {
-      type: Boolean,
-      default: true
+      type: Object,
+      default: function () {
+        return {
+          enable: true
+        }
+      }
     },
 
     data: {
