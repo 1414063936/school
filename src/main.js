@@ -21,6 +21,9 @@ import { Plugin } from 'vue-fragment'
 // ECharts
 import walden from '@/assets/echarts/theme/walden.json'
 import VueECharts from 'vue-echarts/components/ECharts'
+
+// v-charts
+import VChartsLine from 'v-charts/lib/line.common'
 // import 'echarts/lib/chart/line'
 // import 'echarts/lib/chart/bar'
 // import 'echarts/lib/component/polar'
@@ -43,6 +46,8 @@ Vue.use(Plugin)
 
 Vue.component('v-chart', VueECharts)
 VueECharts.registerTheme('walden', walden)
+
+Vue.component(VChartsLine.name, VChartsLine)
 
 Vue.config.productionTip = false
 

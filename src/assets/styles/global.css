@@ -15,6 +15,11 @@ html {
   font-size: 12px;
 }
 
+.el-menu-vertical:not(.el-menu--collapse) {
+  width: 280px;
+  overflow-y: auto;
+}
+
 /* DropDown */
 /*.el-dropdown {*/
   /*padding: 3px 0;*/
@@ -25,6 +30,7 @@ html {
   /*font-size: 12px;*/
   /*line-height: 24px;*/
 /*}*/
+
 
 /*
   滚动条样式
@@ -43,12 +49,18 @@ html {
 
 }
 
+
 /* form */
 .el-form-item--mini .el-form-item__content, .el-form-item--mini .el-form-item__label {
   font-size: 12px;
 }
 
-/* table expand */
+
+/* table */
+.el-table th{
+  background: #F7F7F7;
+}
+
 .el-table__expanded-cell .el-form .el-form-item {
   margin-bottom: 0;
 }
@@ -58,13 +70,14 @@ html {
 }
 
 
-
+/* button */
 .el-button--text {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-right: 5px;
 }
 
+/* dropdown */
 .el-dropdown {
   font-size: 12px;
 }

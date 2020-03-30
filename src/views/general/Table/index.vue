@@ -1,37 +1,35 @@
 <template>
-  <div class="x-panel">
-    <el-row style="flex: 1; overflow-y: auto">
-      <el-col :span="24">
-        <div class="x-panel-wrapper">
-          <div style="height: 35px">
-            <el-button type="primary" icon="el-icon-refresh" @click="refreshData"></el-button>
-          </div>
-          <div style="height: calc(100% - 35px)">
-            <myTable
-              ref="autoTable"
-              auto-load-data
-              auto-load-columns
-              :show-pagination="table.pagination.enable"
-              :url="table.url"
-              :columnsUrl="table.columnsUrl"
-              :data="tableData"
-              :columns="tableColumns"
-              @click#update="updateUser"
-              @click#delete="deleteUser">
-            </myTable>
-          </div>
-        </div>
-      </el-col>
-    </el-row>
-  </div>
+  <my-panel :items="LAYOUT">
+    <template slot="main">
+      <div style="height: 35px">
+        <el-button type="primary" icon="el-icon-refresh" @click="refreshData"></el-button>
+      </div>
+      <div style="height: calc(100% - 35px)">
+        <myTable
+          ref="autoTable"
+          auto-load-data
+          auto-load-columns
+          :show-pagination="table.pagination.enable"
+          :url="table.url"
+          :columnsUrl="table.columnsUrl"
+          :data="tableData"
+          :columns="tableColumns"
+          @click#update="updateUser"
+          @click#delete="deleteUser">
+        </myTable>
+      </div>
+    </template>
+  </my-panel>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import ElRow from 'element-ui/lib/row'
 import ElCol from 'element-ui/lib/col'
+import MyPanel from '../../../components/panel/index.vue'
 export default {
   components: {
+    MyPanel,
     [ElRow.name]: ElRow,
     [ElCol.name]: ElCol
   },
@@ -46,6 +44,21 @@ export default {
   },
   data () {
     return {
+      LAYOUT: [
+        {
+          gutter: 0,
+          equally: true,
+          style: {
+            'overflow-y': 'auto',
+            flex: 1
+          },
+          cols: [
+            {
+              slot: 'main'
+            }
+          ]
+        }
+      ],
       tableColumns: [],
       tableData: []
     }

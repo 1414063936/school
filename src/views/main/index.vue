@@ -177,15 +177,8 @@ export default {
     padding: 3px 0;
   }
 
-  .el-dropdown-menu__item {
-    /*line-height: 24px;*/
-    /*padding: 0 10px;*/
-  }
 </style>
 
 <style>
-  .el-menu-vertical:not(.el-menu--collapse) {
-    width: 280px;
-    overflow-y: auto;
-  }
+
 </style>

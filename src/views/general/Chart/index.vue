@@ -1,20 +1,27 @@
 <template>
-  <div style="width: 100%; height: 100%; background-color: #FFFFFF">
-    <v-chart
-      style="width: 100%; height: 100%"
-      :autoresize="true"
-      :options="polar">
-    </v-chart>
-  </div>
+  <my-panel :items="LAYOUT">
+    <template slot="main">
+      <div style="width: 100%; height: 100%; background-color: #FFFFFF">
+        <v-chart
+          style="width: 100%; height: 100%"
+          theme="walden"
+          :autoresize="true"
+          :options="polar">
+        </v-chart>
+      </div>
+    </template>
+  </my-panel>
 </template>
 
 <script>
 import ECharts from 'vue-echarts/components/ECharts'
-import 'echarts/lib/chart/line'
-import 'echarts/lib/component/polar'
+import MyPanel from '../../../components/panel/index.vue'
+// import 'echarts/lib/chart/line'
+// import 'echarts/lib/component/polar'
 
 export default {
   components: {
+    MyPanel,
     'v-chart': ECharts
   },
   props: {
@@ -37,6 +44,22 @@ export default {
     }
 
     return {
+      LAYOUT: [
+        {
+          gutter: 0,
+          equally: true,
+          style: {
+            flex: 1
+          },
+          cols: [
+            {
+              slot: 'main'
+            }
+          ]
+        }
+      ],
+      width: '100%',
+      height: '100%',
       polar: {
         xAxis: {
           type: 'category',
@@ -58,7 +81,7 @@ export default {
   mounted () {
 
   },
-  methods: {
+  watch: {
 
   }
 }

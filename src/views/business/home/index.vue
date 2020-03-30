@@ -1,54 +1,146 @@
 <template>
-  <div class="x-panel">
-    <el-row :gutter="16" style="flex: 1; overflow-y: auto; margin-bottom: 16px;">
-      <el-col :span="8">
-        <div class="x-panel-wrapper">
-          <v-chart style="width: 98%; height: 98%" :options="polar" :autoresize="true"></v-chart>
+  <my-panel :items="LAYOUT" class="home-page">
+    <template slot="1-1">
+      <el-card class="box-card" :body-style="cardBodyStyle" style="width: 100%; height: 100%;">
+        <div slot="header" class="clearfix">
+          <span><i style="font-size: 16px;" class="el-icon-loading"></i></span>
+          <el-dropdown trigger="hover" style="float: right">
+            <i style="font-size: 16px; cursor: pointer" class="el-icon-menu"></i>
+          </el-dropdown>
         </div>
-      </el-col>
-      <el-col :span="8">
-        <div class="x-panel-wrapper">
-          <v-chart style="width: 98%; height: 98%" :options="polar" :autoresize="true"></v-chart>
+        <v-chart style="width: 100%;height: 100%" :options="polar" :autoresize="true" theme="walden"></v-chart>
+      </el-card>
+    </template>
+    <template slot="1-2">
+      <el-card class="box-card" :body-style="cardBodyStyle" style="width: 100%; height: 100%;">
+        <div slot="header" class="clearfix">
+          <span><i style="font-size: 16px;" class="el-icon-loading"></i></span>
+          <el-dropdown trigger="hover" style="float: right">
+            <i style="font-size: 16px; cursor: pointer" class="el-icon-menu"></i>
+          </el-dropdown>
         </div>
-      </el-col>
-      <el-col :span="8">
-        <div class="x-panel-wrapper">
-          <v-chart style="width: 98%; height: 98%" :options="polar" :autoresize="true"></v-chart>
+        <v-chart style="width: 100%;height: 100%" :options="polar" :autoresize="true" theme="walden"></v-chart>
+      </el-card>
+    </template>
+    <template slot="1-3">
+      <el-card class="box-card" :body-style="cardBodyStyle" style="width: 100%; height: 100%;">
+        <div slot="header" class="clearfix">
+          <span><i style="font-size: 16px;" class="el-icon-loading"></i></span>
+          <el-dropdown trigger="hover" style="float: right">
+            <i style="font-size: 16px; cursor: pointer" class="el-icon-menu"></i>
+          </el-dropdown>
         </div>
-      </el-col>
-    </el-row>
-    <el-row :gutter="16" style="flex: 1; overflow-y: auto">
-      <el-col :span="8">
-        <div class="x-panel-wrapper">
-          <v-chart style="width: 98%; height: 98%" :options="polar" :autoresize="true"></v-chart>
+        <v-chart style="width: 100%;height: 100%" :options="polar" :autoresize="true" theme="walden"></v-chart>
+      </el-card>
+    </template>
+    <template slot="2-1">
+      <el-card class="box-card" :body-style="cardBodyStyle" style="width: 100%; height: 100%;">
+        <div slot="header" class="clearfix">
+          <span><i style="font-size: 16px;" class="el-icon-loading"></i></span>
+          <el-dropdown trigger="hover" style="float: right">
+            <i style="font-size: 16px; cursor: pointer" class="el-icon-menu"></i>
+          </el-dropdown>
         </div>
-      </el-col>
-      <el-col :span="8">
-        <div class="x-panel-wrapper">
-          <v-chart style="width: 98%; height: 98%" :options="polar" :autoresize="true"></v-chart>
+        <v-chart style="width: 100%;height: 100%" :options="polar" :autoresize="true" theme="walden"></v-chart>
+      </el-card>
+    </template>
+    <template slot="2-2">
+      <el-card class="box-card" :body-style="cardBodyStyle" style="width: 100%; height: 100%;">
+        <div slot="header" class="clearfix">
+          <span><i style="font-size: 16px;" class="el-icon-loading"></i></span>
+          <el-dropdown trigger="hover" style="float: right">
+            <i style="font-size: 16px; cursor: pointer" class="el-icon-menu"></i>
+          </el-dropdown>
         </div>
-      </el-col>
-      <el-col :span="8">
-        <div class="x-panel-wrapper">
-          <v-chart style="width: 98%; height: 98%" :options="polar" :autoresize="true"></v-chart>
+        <v-chart style="width: 100%;height: 100%" :options="polar" :autoresize="true" theme="walden"></v-chart>
+      </el-card>
+    </template>
+    <template slot="2-3">
+      <el-card class="box-card" :body-style="cardBodyStyle" style="width: 100%; height: 100%;">
+        <div slot="header" class="clearfix">
+          <span><i style="font-size: 16px;" class="el-icon-loading"></i></span>
+          <el-dropdown trigger="hover" style="float: right">
+            <i style="font-size: 16px; cursor: pointer" class="el-icon-menu"></i>
+          </el-dropdown>
         </div>
-      </el-col>
-    </el-row>
-  </div>
+        <v-chart style="width: 100%;height: 100%" :options="polar" :autoresize="true" theme="walden"></v-chart>
+      </el-card>
+    </template>
+  </my-panel>
 </template>
 
 <script>
 import ElRow from 'element-ui/lib/row'
 import ElCol from 'element-ui/lib/col'
 import { mapGetters } from 'vuex'
+import MyPanel from '../../../components/panel/index.vue'
 export default {
   components: {
+    MyPanel,
     [ElRow.name]: ElRow,
     [ElCol.name]: ElCol
   },
   data () {
     return {
+      LAYOUT: [
+        {
+          gutter: 12,
+          style: {
+            flex: 1
+          },
+          cols: [
+            {
+              span: 8,
+              slot: '1-1'
+            },
+            {
+              span: 8,
+              slot: '1-2'
+            },
+            {
+              span: 8,
+              slot: '1-3'
+            }
+          ]
+        },
+        {
+          gutter: 12,
+          style: {
+            flex: 1
+          },
+          cols: [
+            {
+              span: 8,
+              slot: '2-1'
+            },
+            {
+              span: 8,
+              slot: '2-2'
+            },
+            {
+              span: 8,
+              slot: '2-3'
+            }
+          ]
+        }
+      ],
       polar: {
+        title: {
+          text: 'echarts',
+          x: 'center',
+          y: 'bottom',
+          textStyle: {
+            show: true,
+            fontSize: 12
+          }
+        },
+        grid: {
+          top: 10,
+          bottom: 25,
+          left: 10,
+          right: 10,
+          containLabel: true
+        },
         xAxis: {
           type: 'category',
           data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -60,6 +152,9 @@ export default {
           data: [820, 932, 901, 934, 1290, 1330, 1320],
           type: 'line'
         }]
+      },
+      cardBodyStyle: {
+        height: 'calc(100% - 33px)' // padding + icon
       }
     }
   },
@@ -67,41 +162,24 @@ export default {
     ...mapGetters(['system', 'apiProject'])
   },
   mounted () {
-    const vm = this
-    vm.$axios.get('/' + vm.apiProject + '/student/list')
-      .then(response => {
 
-      })
   }
 }
 </script>
 
 <style scoped>
-  .x-panel {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    display: -webkit-flex;
-    flex-direction: column;
+
+</style>
+
+<style>
+  /* 放在scoped中会失效 */
+  .home-page .el-card__header {
+    padding: 8px 20px;
+    border-bottom: 0 solid #ebeef5!important;
   }
 
-  .el-row {
-    display: flex;
-    display: -webkit-flex;
-  }
-
-  .el-col {
-    height: 100%;
-    /*flex: 1;*/
-    display: flex;
-    display: -webkit-flex;
-    flex-direction: column;
-    border-radius: 4px;
-  }
-
-  .x-panel-wrapper {
-    background-color: #FFFFFF;
-    flex: 1;
-    overflow: auto;
+  .home-page .el-card__body {
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 </style>
