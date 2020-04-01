@@ -35,8 +35,8 @@ import './assets/icon/material/iconfont.css'
 import './assets/styles/global.css'
 
 // 注册组件
-import '@/components/index'
 import './import-view'
+import '@/components/index'
 
 Vue.use(Element, {
   size: 'mini',

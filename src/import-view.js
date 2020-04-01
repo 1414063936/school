@@ -1,13 +1,16 @@
+/**
+ * 注册业务组件(view)
+ */
 import Vue from 'vue'
 
 const items = [
-  {name: 'Table', from: 'views/general/Table'}
+  {name: 'Table', from: () => import('@/views/general/Table')}
 ]
 
-const importComponents = (items) => {
+const importComponent = (items) => {
   items.forEach(item => {
-    Vue.component(item.name, () => import('@/' + item.from))
+    Vue.component(item.name, item.from)
   })
 }
 
-importComponents(items)
+importComponent(items)
