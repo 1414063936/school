@@ -1,6 +1,6 @@
 const renders = {
   click: function (createElement, emitEventHandler, item) {
-    return createElement('click-button', {
+    return createElement('my-click-button', {
       ref: item.id,
       refInFor: true,
       props: item,
@@ -10,7 +10,14 @@ const renders = {
     })
   },
   checks: function (createElement, emitEventHandler, item) {
-    return createElement('button', '嘤')
+    return createElement('my-checks-button', {
+      ref: item.id,
+      refInFor: true,
+      props: item,
+      on: {
+
+      }
+    })
   }
 }
 export default renders

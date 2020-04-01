@@ -36,6 +36,7 @@ import './assets/styles/global.css'
 
 // 注册组件
 import '@/components/index'
+import './import-view'
 
 Vue.use(Element, {
   size: 'mini',

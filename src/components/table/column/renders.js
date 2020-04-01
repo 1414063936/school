@@ -14,7 +14,7 @@ const renders = {
         Object.assign(childCtx.props, option.props)
 
         switch (option.element) {
-          case 'click-button':
+          case 'my-click-button':
             childCtx.on = {
               'click': () => {
                 // 手动触发table组件自定义事件

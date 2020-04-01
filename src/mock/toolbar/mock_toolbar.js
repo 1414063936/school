@@ -21,7 +21,7 @@ const toolbar = {
     position: 'right',
     props: {'label': 'label', '$label': '$label', 'value': 'visible'},
     tooltipDisabled: false,
-    tooltipContent: 't.Columns_Select',
+    tooltipContent: 'Columns_Select',
     tooltipPlacement: 'bottom',
     tooltipEffect: 'dark'
   }
@@ -29,7 +29,7 @@ const toolbar = {
 
 const allItems = {
   'Student_List': [
-    // toolbar.COLUMNS_SELECT,
+    toolbar.COLUMNS_SELECT,
     toolbar.REFRESH
   ]
 }

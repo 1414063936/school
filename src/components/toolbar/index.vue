@@ -77,6 +77,15 @@ export default {
     emitEventHandler (event) {
       this.$emit(event, ...Array.from(arguments).slice(1))
     },
+    trigger (ref, method, ...args) {
+      const comps = this.$refs[ref]
+      if (comps && comps.length > 0) {
+        const comp = comps[0]
+        if (comp) {
+          comp[method](...args)
+        }
+      }
+    },
     loadItems () {
       let _params = {}
       this.syncHttpGet(this.url, _params, (data, textStatus, jqXHR) => {

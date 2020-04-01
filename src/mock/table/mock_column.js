@@ -22,6 +22,7 @@ const columns = {
     {
       prop: 'birth',
       label: '出生年月',
+      visible: false,
       width: '160px',
       showOverflowTooltip: true
     },
@@ -40,11 +41,12 @@ const columns = {
       label: '操作',
       width: '100px',
       widget: 'operations',
+      fixed: 'right',
       props: {
         type: 'dropdown',
         options: [
           {
-            element: 'click-button',
+            element: 'my-click-button',
             props: {
               id: 'update',
               label: '编辑',
@@ -53,7 +55,7 @@ const columns = {
             }
           },
           {
-            element: 'click-button',
+            element: 'my-click-button',
             props: {
               id: 'delete',
               label: '删除',
@@ -99,11 +101,12 @@ const columns = {
       label: '操作',
       width: '100px',
       widget: 'operations',
+      fixed: 'right',
       props: {
         type: 'dropdown',
         options: [
           {
-            element: 'click-button',
+            element: 'my-click-button',
             props: {
               id: 'update',
               label: '编辑',
@@ -112,7 +115,7 @@ const columns = {
             }
           },
           {
-            element: 'click-button',
+            element: 'my-click-button',
             props: {
               id: 'delete',
               label: '删除',

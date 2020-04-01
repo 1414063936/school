@@ -1,7 +1,7 @@
 <template>
   <my-panel :items="LAYOUT">
     <template slot="main">
-      <my-toolbar auto-load-items :url="toolbar[0].url" @click#refresh="refreshData"></my-toolbar>
+      <my-toolbar :ref="toolbar[0].id" auto-load-items :url="toolbar[0].url" @click#refresh="refreshData"></my-toolbar>
       <div style="height: calc(100% - 35px)">
         <my-table
           ref="autoTable"
@@ -13,6 +13,7 @@
           :columnsUrl="table.columnsUrl"
           :data="tableData"
           :columns="tableColumns"
+          @columns-change="columns_change"
           @click#update="updateUser"
           @click#delete="deleteUser">
         </my-table>
@@ -27,8 +28,10 @@ import ElRow from 'element-ui/lib/row'
 import ElCol from 'element-ui/lib/col'
 import MyPanel from '../../../components/panel/index.vue'
 import MyToolbar from '../../../components/toolbar/index.vue'
+import MyChecksButton from '../../../components/button/checksButton.vue'
 export default {
   components: {
+    MyChecksButton,
     MyToolbar,
     MyPanel,
     [ElRow.name]: ElRow,
@@ -61,7 +64,8 @@ export default {
         }
       ],
       tableColumns: [],
-      tableData: []
+      tableData: [],
+      checks: []
     }
   },
   computed: {
@@ -71,6 +75,10 @@ export default {
 
   },
   methods: {
+    columns_change (val) {
+      // this.checks = val
+      this.$refs[this.toolbar[0].id].trigger('checks', 'setChecks', val)
+    },
     updateUser (row) {
       console.log(row)
     },

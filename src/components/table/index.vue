@@ -34,11 +34,13 @@
         </el-table-column>
         <el-table-column
           v-for="(column, key) in internalColumns"
+          v-if="column.visible !== false"
           :key="key"
           :prop="column.prop"
           :label="$t(column.label)"
           :width="column.width"
           :min-width="column.minWidth"
+          :fixed="column.fixed"
           :show-overflow-tooltip="column.showOverflowTooltip">
           <template slot-scope="scope">
             <span v-if="column.widget !== undefined">
@@ -209,6 +211,11 @@ export default {
     if (this.autoLoadColumns) {
       let _params = {}
       this.syncHttpGet(this.columnsUrl, _params, (data, textStatus, jqXHR) => {
+        data.forEach(item => {
+          if (item.visible === undefined) {
+            item.visible = true
+          }
+        })
         this.internalColumns = data
       })
     }
@@ -241,8 +248,16 @@ export default {
     columns: {
       immediate: true,
       handler: function (val) {
-        this.internalColumns = JSON.parse(JSON.stringify(val))
+        const _columns = JSON.parse(JSON.stringify(val))
+        _columns.forEach(function (item) {
+          if (item.visible === undefined) item.visible = true
+          item.expand = item.expand || {}
+        })
+        this.internalColumns = _columns
       }
+    },
+    internalColumns: function (val) {
+      this.emitEventHandler('columns-change', val)
     },
     tablesHeight: function (val) {
       this.getPageSize(val)
@@ -286,7 +301,7 @@ export default {
     },
     getPageSize (tableHeight) {
       // line-height 23 + padding 12 + border 1，含有operation列的为37
-      const rowHeight = 37
+      const rowHeight = 38
       const headerHeight = this.$refs[this.ref].$refs['headerWrapper'].offsetHeight
 
       this.internalPageSize = (Math.floor((tableHeight - headerHeight) / rowHeight) || 1)
@@ -343,7 +358,7 @@ export default {
   .el-table {
     /*width: 100%;*/
     height: 100%;
-    overflow: auto;
+    /*overflow: auto;*/
   }
 
   .height-fit .my-table-wrapper, .height-fit .el-table {
@@ -361,5 +376,12 @@ export default {
 </style>
 
 <style>
-
+  /*
+    固定表头高度
+    切换列显示隐藏时，表头高度会跳动，
+    导致表格内容高度变化
+    dbSonar中表格内容高度不会被压缩 */
+  .height-fit .el-table .el-table__header-wrapper {
+    height: 36px;
+  }
 </style>

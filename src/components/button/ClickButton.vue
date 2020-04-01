@@ -1,5 +1,9 @@
 <template>
-  <el-tooltip :disabled="tooltipDisabled" :content="$t(tooltipContent)" :placement="tooltipPlacement" :effect="tooltipEffect">
+  <el-tooltip
+    :disabled="tooltipDisabled"
+    :content="$t(tooltipContent)"
+    :placement="tooltipPlacement"
+    :effect="tooltipEffect">
     <el-button
       :icon="icon"
       :type="type"
@@ -12,7 +16,7 @@
 <script>
 import ElButton from 'element-ui/lib/button'
 export default {
-  name: 'ClickButton',
+  name: 'MyClickButton',
   components: {
     [ElButton.name]: ElButton
   },
