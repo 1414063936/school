@@ -1,7 +1,7 @@
 <template>
   <my-panel :items="LAYOUT" class="home-page">
     <template slot="1-1">
-      <el-card class="box-card" :body-style="cardBodyStyle" style="width: 100%; height: 100%;">
+      <my-card>
         <div slot="header" class="clearfix">
           <span><i style="font-size: 16px;" class="el-icon-loading"></i></span>
           <el-dropdown trigger="hover" style="float: right">
@@ -13,7 +13,7 @@
           </el-dropdown>
         </div>
         <v-chart style="width: 100%;height: 100%" :options="polar" :autoresize="true" theme="walden"></v-chart>
-      </el-card>
+      </my-card>
     </template>
     <template slot="1-2">
       <my-card>
@@ -31,7 +31,7 @@
       </my-card>
     </template>
     <template slot="1-3">
-      <el-card class="box-card" :body-style="cardBodyStyle" style="width: 100%; height: 100%;">
+      <my-card>
         <div slot="header" class="clearfix">
           <span><i style="font-size: 16px;" class="el-icon-loading"></i></span>
           <el-dropdown trigger="hover" style="float: right">
@@ -43,7 +43,7 @@
           </el-dropdown>
         </div>
         <v-chart style="width: 100%;height: 100%" :options="polar" :autoresize="true" theme="walden"></v-chart>
-      </el-card>
+      </my-card>
     </template>
     <template slot="2-1">
       <my-card>
