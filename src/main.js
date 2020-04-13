@@ -18,6 +18,9 @@ import './mock'
 
 import { Plugin } from 'vue-fragment'
 
+// form-create
+import formCreate from '@form-create/element-ui'
+
 // ECharts
 import walden from '@/assets/echarts/theme/walden.json'
 import VueECharts from 'vue-echarts/components/ECharts'
@@ -38,10 +41,13 @@ import './assets/styles/global.css'
 import './import-view'
 import '@/components/index'
 
+import { defaultSize } from './default'
 Vue.use(Element, {
-  size: 'mini',
+  size: defaultSize,
   i18n: (key, value) => i18n.t(key, value)
 })
+
+Vue.use(formCreate)
 
 Vue.use(Plugin)
 
