@@ -100,7 +100,22 @@ const Business = [
     },
     component: Main,
     children: [
-      Config.User()
+      Config.User(),
+      Config.Notify_Server()
+    ]
+  },
+  {
+    path: '/Audit',
+    name: 'Audit',
+    meta: {
+      label: 'menu.Audit'
+    },
+    component: Main,
+    children: [
+      General.Audit_Information(),
+      General.Sql_List(),
+      General.Session_List(),
+      General.Risk_List()
     ]
   }
 ]

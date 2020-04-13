@@ -1,5 +1,5 @@
 html {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* Menu */
@@ -8,29 +8,17 @@ html {
 }
 
 .el-submenu__title {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .el-menu-item {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .el-menu-vertical:not(.el-menu--collapse) {
   width: 280px;
   overflow-y: auto;
 }
-
-/* DropDown */
-/*.el-dropdown {*/
-  /*padding: 3px 0;*/
-  /*font-size: 12px;*/
-/*}*/
-
-/*.el-dropdown-menu__item {*/
-  /*font-size: 12px;*/
-  /*line-height: 24px;*/
-/*}*/
-
 
 /*
   滚动条样式
@@ -49,16 +37,37 @@ html {
 
 }
 
-
 /* form */
+.el-form-item--medium .el-form-item__content, .el-form-item--medium .el-form-item__label {
+  font-size: 14px;
+}
+.el-form-item--small .el-form-item__content, .el-form-item--small .el-form-item__label {
+  font-size: 13px;
+}
 .el-form-item--mini .el-form-item__content, .el-form-item--mini .el-form-item__label {
   font-size: 12px;
 }
 
 
 /* table */
+.el-table--medium {
+  font-size: 14px;
+}
+.el-table--small {
+  font-size: 13px;
+}
+.el-table--mini {
+  font-size: 12px;
+}
+
+
 .el-table th{
   background: #F7F7F7;
+}
+
+/* table操作栏表头补齐的部分与th背景颜色统一 */
+.el-table .el-table__fixed-right-patch {
+  background-color: #F7F7F7;
 }
 
 .el-table__expanded-cell .el-form .el-form-item {
@@ -77,7 +86,43 @@ html {
   padding-right: 5px;
 }
 
-/* dropdown */
-.el-dropdown {
-  font-size: 12px;
+/* Dialog
+-------------------------- */
+.el-dialog__header {
+  padding: 10px;
+  background: #30465d;
+  text-align: center;
+}
+
+.el-dialog__title {
+  font-size: 16px;
+  color: #FFFFFF;
+}
+
+.el-dialog__headerbtn {
+  top: 13px;
+}
+
+.el-dialog.is-fullscreen {
+  width: 100% !important;
+}
+
+.el-dialog.is-fullscreen .el-dialog__body{
+  max-height: calc(100% - 44px);
+}
+
+.el-dialog:not(.is-fullscreen) .el-dialog__body{
+  max-height: 72vh;
+}
+
+.el-dialog__body{
+  overflow: auto
+}
+
+.el-dialog__headerbtn .el-dialog__fullscreen {
+  color: #909399;
+}
+
+.el-dialog__headerbtn .el-dialog__fullscreen:focus, .el-dialog__headerbtn .el-dialog__fullscreen:hover {
+  color: #409EFF;
 }

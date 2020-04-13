@@ -103,6 +103,9 @@ export default {
     [ElRow.name]: ElRow,
     [ElCol.name]: ElCol
   },
+  created () {
+    // console.log(this.$route)
+  },
   data () {
     return {
       LAYOUT: [
@@ -177,7 +180,7 @@ export default {
         }]
       },
       cardBodyStyle: {
-        height: 'calc(100% - 33px)' // padding + icon
+        height: 'calc(100% - 35px)' // padding + icon
       }
     }
   },

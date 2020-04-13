@@ -107,5 +107,23 @@
       "label": "menu.User",
       "$label": "用户管理"
     }
+  },
+  "Notify_Server": {
+    "name": "Notify_Server",
+    "path": "/System_Manage/Notify_Server",
+    "type": "item",
+    "meta": {
+      "label": "menu.Notify_Server",
+      "$label": "消息传递通道"
+    }
+  },
+  "Audit_Information": {
+    "name": "Audit_Information",
+    "path": "/Audit/Audit_Information",
+    "type": "item",
+    "meta": {
+      "label": "menu.Audit_Information",
+      "$label": "审计情况"
+    }
   }
 }

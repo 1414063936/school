@@ -22,6 +22,13 @@ const renders = {
               }
             }
             break
+          case 'my-dialog-button':
+            childCtx.on = {
+              'component-link': () => {
+                emitEventHandler(`component-link#${option.props.id}`, row)
+              }
+            }
+            break
         }
         return createElement(option.element, childCtx)
       })

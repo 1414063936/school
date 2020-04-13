@@ -5,6 +5,13 @@ import Business from './business'
 
 Vue.use(Router)
 
+// Navigating to current location ("XXXXXX") is not allowed
+// https://www.jianshu.com/p/a140ad42ef00
+const routerPush = Router.prototype.push
+Router.prototype.push = function push (location) {
+  return routerPush.call(this, location).catch(error => error)
+}
+
 const staticRoutes = [
   {
     path: '/login',

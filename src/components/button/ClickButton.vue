@@ -9,7 +9,7 @@
       :type="type"
       :size="size"
       @click="() => emitEventHandler('click')">
-      {{ label }}
+      {{ $t(label) }}
     </el-button>
   </el-tooltip>
 </template>

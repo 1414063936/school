@@ -7,6 +7,7 @@
   "change_password": "修改修改",
   "change_user": "帐号修改",
   "logout": "退出登录",
+  "btn_add": "添加",
   "menu": {
     "Home": "主页",
     "Student": "学生信息",
@@ -26,6 +27,9 @@
     "Award_Second_List": "二等奖学金名单",
     "Grade_List": "成绩信息",
     "System_Manage": "系统管理",
-    "User": "用户列表"
+    "User": "用户列表",
+    "Notify_Server": "消息传递通道",
+    "Audit": "审计信息",
+    "Audit_Information": "审计情况"
   }
 }

@@ -1,13 +1,27 @@
 import { param2Obj } from '@/utils/param2Obj'
+import { defaultSize } from '@/default'
 
 const toolbar = {
+  ADD: {
+    id: 'add',
+    widget: 'click',
+    position: 'left',
+    label: 'btn_add',
+    type: 'primary',
+    size: defaultSize,
+    icon: 'el-icon-edit',
+    tooltipDisabled: false,
+    tooltipContent: 'add',
+    tooltipPlacement: 'bottom',
+    tooltipEffect: 'dark'
+  },
   REFRESH: {
     id: 'refresh',
     widget: 'click',
     position: 'right',
     label: '',
     type: 'primary',
-    size: 'mini',
+    size: defaultSize,
     icon: 'el-icon-refresh',
     tooltipDisabled: false,
     tooltipContent: 'refresh',
@@ -17,7 +31,7 @@ const toolbar = {
   COLUMNS_SELECT: {
     id: 'checks',
     widget: 'checks',
-    size: 'mini',
+    size: defaultSize,
     position: 'right',
     props: {'label': 'label', '$label': '$label', 'value': 'visible'},
     tooltipDisabled: false,
@@ -28,7 +42,21 @@ const toolbar = {
 }
 
 const allItems = {
+  'Base': [
+    toolbar.COLUMNS_SELECT,
+    toolbar.REFRESH
+  ],
   'Student_List': [
+    toolbar.COLUMNS_SELECT,
+    toolbar.REFRESH
+  ],
+  'User_List': [
+    toolbar.ADD,
+    toolbar.COLUMNS_SELECT,
+    toolbar.REFRESH
+  ],
+  'Notify_Server_List': [
+    toolbar.ADD,
     toolbar.COLUMNS_SELECT,
     toolbar.REFRESH
   ]

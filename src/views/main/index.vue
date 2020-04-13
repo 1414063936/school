@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <el-menu :default-active="defaultActive" class="el-menu-vertical" :collapse="!active" :background-color="backgroundColor" :text-color="textColor" :active-text-color="activeTextColor" unique-opened>
-      <el-menu-item index="0" style="height: 62px; line-height: 62px;font-size: 18px; font-weight:800;">
+      <el-menu-item index="0" style="height: 62px; line-height: 62px;font-size: 24px; font-weight:800;">
         <div style="color: #FFF;">
           <span style="display: inline-block !important;">dbSonar</span>
         </div>
@@ -17,7 +17,7 @@
           </span>
         </div>
         <div class="right-header">
-          <el-dropdown class="right-header-item" trigger="click">
+          <el-dropdown size="medium" class="right-header-item" trigger="click">
              <span class="el-dropdown-link">
                <i class="el-icon-cn-morentouxiang" :style="{color: textColor, fontSize: iconSize, padding: '0 2px'}"></i>
                <span :style="{color: textColor}">{{$t('user_setting')}}</span><i class="el-icon-arrow-down el-icon--right"></i>

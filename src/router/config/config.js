@@ -8,7 +8,17 @@ const Config = {
       meta: {
         label: 'menu.User'
       },
-      component: () => import('@/views/student')
+      component: () => import('@/views/settings/user')
+    })
+  },
+  Notify_Server: function () {
+    return new IRoute({
+      name: 'Notify_Server',
+      path: 'Notify_Server',
+      meta: {
+        label: 'menu.Notify_Server'
+      },
+      component: () => import('@/views/settings/notifyServer')
     })
   }
 }

@@ -1,6 +1,8 @@
 import ITable from '../general/ITable'
+import IConditionTable from '../general/IConditionTable'
 import IChart from '../general/IChart'
 import ITemp from '../general/ITemp'
+import ITab from '../general/ITab'
 
 // 不同路由共用一个组件如ITable，需设置router-view标签的key，否则不会触发页面更新
 const General = {
@@ -91,6 +93,42 @@ const General = {
       path: 'Award_Second_List',
       meta: {
         label: 'menu.Award_Second_List'
+      }
+    })
+  },
+  Audit_Information: function () {
+    return new ITab({
+      name: 'Audit_Information',
+      path: 'Audit_Information',
+      meta: {
+        label: 'menu.Audit_Information'
+      }
+    })
+  },
+  Sql_List: function () {
+    return new IConditionTable({
+      name: 'Sql_List',
+      path: 'Sql_List',
+      meta: {
+        label: 'menu.Sql_List'
+      }
+    })
+  },
+  Session_List: function () {
+    return new IConditionTable({
+      name: 'Session_List',
+      path: 'Session_List',
+      meta: {
+        label: 'menu.Session_List'
+      }
+    })
+  },
+  Risk_List: function () {
+    return new IConditionTable({
+      name: 'Risk_List',
+      path: 'Risk_List',
+      meta: {
+        label: 'menu.Risk_List'
       }
     })
   }

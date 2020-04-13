@@ -90,6 +90,20 @@
             {
               "type": "item",
               "obj": "User"
+            },
+            {
+              "type": "item",
+              "obj": "Notify_Server"
+            }
+          ]
+        },
+        {
+          "type": "menu",
+          "obj": "Audit",
+          "children": [
+            {
+              "type": "item",
+              "obj": "Audit_Information"
             }
           ]
         }

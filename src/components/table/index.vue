@@ -41,10 +41,19 @@
           :width="column.width"
           :min-width="column.minWidth"
           :fixed="column.fixed"
+          :align="column.align"
           :show-overflow-tooltip="column.showOverflowTooltip">
           <template slot-scope="scope">
             <span v-if="column.widget !== undefined">
               <column-render :column="column" :row="scope.row" :emitFunc="emitEventHandler"></column-render>
+            </span>
+            <span class="data-link" v-if="column.postLink" style="color: #409eff;">
+              <router-link
+                :to="{
+                  path: column.postLink,
+                  query:{row: JSON.stringify(setUrlParams(scope.row, column.params))}}">
+                {{ scope.row[column.prop] }}
+              </router-link>
             </span>
             <span v-else>
               {{ scope.row[column.prop] }}
@@ -74,6 +83,7 @@ import ElTable from 'element-ui/lib/table'
 import ElTableColumn from 'element-ui/lib/table-column'
 import ElPagination from 'element-ui/lib/pagination'
 import ColumnRender from './column/index.vue'
+import { defaultSize } from '@/default'
 export default {
   name: 'myTable',
   mixins: [m],
@@ -90,7 +100,7 @@ export default {
   props: {
     size: {
       type: String,
-      default: 'mini'
+      default: defaultSize
     },
     border: {
       type: Boolean,
@@ -301,7 +311,13 @@ export default {
     },
     getPageSize (tableHeight) {
       // line-height 23 + padding 12 + border 1，含有operation列的为37
-      const rowHeight = 38
+      let padding = 12
+      if (this.size === 'small') {
+        padding = 16
+      } else if (this.size === 'medium') {
+        padding = 20
+      }
+      const rowHeight = padding + 26
       const headerHeight = this.$refs[this.ref].$refs['headerWrapper'].offsetHeight
 
       this.internalPageSize = (Math.floor((tableHeight - headerHeight) / rowHeight) || 1)
@@ -333,6 +349,14 @@ export default {
       if (this.heightFit) {
         this.internalHeight = this.tablesHeight
       }
+    },
+    setUrlParams (row, list) {
+      const params = {}
+      list.forEach(item => {
+        params[item] = row[item]
+      })
+
+      return params
     }
   }
 }
@@ -373,6 +397,11 @@ export default {
     justify-content: flex-end;
     align-items: center;
   }
+
+  .data-link a {
+    text-decoration: none;
+    color: #409eff
+  }
 </style>
 
 <style>
@@ -382,6 +411,15 @@ export default {
     导致表格内容高度变化
     dbSonar中表格内容高度不会被压缩 */
   .height-fit .el-table .el-table__header-wrapper {
+    height: 44px;
+  }
+
+  .height-fit .el-table--small .el-table__header-wrapper {
+    height: 40px;
+  }
+
+  .height-fit .el-table--mini .el-table__header-wrapper {
     height: 36px;
   }
+
 </style>

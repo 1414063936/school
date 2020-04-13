@@ -7,12 +7,14 @@
           ref="autoTable"
           auto-load-data
           auto-load-columns
+          :height-fit="table.heightFit"
           :show-pagination="table.pagination.enable"
           :expand="table.expand"
           :url="table.url"
           :columnsUrl="table.columnsUrl"
           :data="tableData"
           :columns="tableColumns"
+          :border="table.border"
           @columns-change="columns_change"
           @click#update="updateUser"
           @click#delete="deleteUser">
@@ -28,7 +30,7 @@ import ElRow from 'element-ui/lib/row'
 import ElCol from 'element-ui/lib/col'
 import MyPanel from '../../../components/panel/index.vue'
 import MyToolbar from '../../../components/toolbar/index.vue'
-import MyChecksButton from '../../../components/button/checksButton.vue'
+import MyChecksButton from '../../../components/button/ChecksButton.vue'
 export default {
   components: {
     MyChecksButton,
@@ -75,6 +77,9 @@ export default {
 
   },
   methods: {
+    emitEventHandler (event) {
+      this.$emit(event, ...Array.from(arguments).slice(1))
+    },
     columns_change (val) {
       // this.checks = val
       this.$refs[this.toolbar[0].id].trigger('checks', 'setChecks', val)

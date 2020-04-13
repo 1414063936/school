@@ -42,7 +42,5 @@ export default {
 </script>
 
 <style scoped>
-  .el-breadcrumb__item {
-    font-size: 12px;
-  }
+
 </style>

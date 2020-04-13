@@ -61,5 +61,14 @@
       "$label": "系统管理",
       "iconClass": "el-icon-setting"
     }
+  },
+  "Audit": {
+    "name": "Audit",
+    "type": "menu",
+    "meta": {
+      "label": "menu.Audit",
+      "$label": "审计信息",
+      "iconClass": "el-icon-collection"
+    }
   }
 }

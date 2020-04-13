@@ -86,5 +86,101 @@
     "props": {
       "text": "成绩信息"
     }
+  },
+  "Audit_Information": {
+    "props": {
+      "tabs": [
+        {
+          "name": "sql",
+          "label": "SQL情况",
+          "component": "general/Table",
+          "compProps": {
+            "toolbar": [
+              {
+                "id": "top_toolbar",
+                "url": "/page/toolbar?id=Base"
+              }
+            ],
+            "table": {
+              "url": "/{{api_project}}/sql/list",
+              "columnsUrl": "/page/table_column?id=Sql_Statistics",
+              "pagination": {
+                "enable": true
+              },
+              "expand": {
+                "enable": false
+              }
+            }
+          }
+        },
+        {
+          "name": "session",
+          "label": "会话情况",
+          "component": "general/Table",
+          "compProps": {
+            "toolbar": [
+              {
+                "id": "top_toolbar",
+                "url": "/page/toolbar?id=Base"
+              }
+            ],
+            "table": {
+              "url": "/{{api_project}}/session/list",
+              "columnsUrl": "/page/table_column?id=Session_Statistics",
+              "pagination": {
+                "enable": true
+              },
+              "expand": {
+                "enable": false
+              }
+            }
+          }
+        },
+        {
+          "name": "risk",
+          "label": "风险情况",
+          "component": "general/Table",
+          "compProps": {
+            "toolbar": [
+              {
+                "id": "top_toolbar",
+                "url": "/page/toolbar?id=Base"
+              }
+            ],
+            "table": {
+              "url": "/{{api_project}}/risk/list",
+              "columnsUrl": "/page/table_column?id=Risk_Statistics",
+              "pagination": {
+                "enable": true
+              },
+              "expand": {
+                "enable": false
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "Sql_List": {
+    "props": {
+      "toolbar": [],
+      "filters": [],
+      "table": {}
+    }
+  },
+  "Session_List": {
+    "props": {
+      "toolbar": [],
+      "filters": [],
+      "table": {}
+    }
+  },
+  "Risk_List": {
+    "props": {
+      "toolbar": [],
+      "filters": [],
+      "table": {}
+    }
   }
 }
