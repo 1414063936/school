@@ -11,8 +11,8 @@ class IConditionTable extends IRoute {
         resolve(connector.connect({
           mapStateToProps: {
             toolbar: state => state.views[key].props.toolbar,
-            filters: state => state.views[key].props.filters,
-            table: state => state.views[key].props.table
+            table: state => state.views[key].props.table,
+            form: state => state.views[key].props.form
           }
         })(ConditionTable))
       })

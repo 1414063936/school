@@ -9,6 +9,10 @@ export default {
     const render = renders[widget]
 
     if (!render) { throw new Error(`This Widget [${widget}] is not supported`) }
+
+    if (!ctx.data.props) {
+      ctx.data.props = {}
+    }
     Object.assign(ctx.data.props, config)
     return render(createElement, ctx)
   }

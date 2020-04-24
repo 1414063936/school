@@ -11,6 +11,13 @@ import MyUploadFileButton from './button/UploadFileButton.vue'
 
 import MyFormDialog from './dialog/FormDialog.vue'
 
+import MyForm from './form'
+import MySelect from './select'
+
+import MyDateRange from './dateRange'
+
+import MyVueEcharts from './chart/VueECharts.vue'
+
 Vue.component(MyTable.name, MyTable)
 Vue.component(MyPanel.name, MyPanel)
 Vue.component(MyCard.name, MyCard)
@@ -21,4 +28,12 @@ Vue.component(MyDialogButton.name, MyDialogButton)
 Vue.component(MyFormDialogButton.name, MyFormDialogButton)
 Vue.component(MyUploadFileButton.name, MyUploadFileButton)
 
+Vue.component(MyDateRange.name, MyDateRange)
+
 Vue.component(MyFormDialog.name, MyFormDialog)
+
+Vue.component(MyForm.name, MyForm)
+
+Vue.component(MySelect.name, MySelect)
+
+Vue.component(MyVueEcharts.name, MyVueEcharts)
