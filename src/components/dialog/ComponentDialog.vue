@@ -106,7 +106,6 @@ export default {
   },
   methods: {
     emitEventHandler (event) {
-      console.log(event)
       this.$emit(event, ...Array.from(arguments).slice(1))
     },
     open () {

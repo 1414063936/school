@@ -93,69 +93,81 @@
         {
           "name": "sql",
           "label": "SQL情况",
-          "component": "general/Table",
+          "component": "general/ChartTable",
           "compProps": {
             "toolbar": [
               {
                 "id": "top_toolbar",
-                "url": "/page/toolbar?id=Base"
+                "url": "/page/toolbar?id=Audit_Statistics"
               }
             ],
             "table": {
               "url": "/{{api_project}}/sql/list",
               "columnsUrl": "/page/table_column?id=Sql_Statistics",
               "pagination": {
-                "enable": true
+                "enable": true,
+                "layout": "prev, pager, next"
               },
               "expand": {
                 "enable": false
               }
+            },
+            "chart": {
+              "url": "/{{api_project}}/sql/get_chart"
             }
           }
         },
         {
           "name": "session",
           "label": "会话情况",
-          "component": "general/Table",
+          "component": "general/ChartTable",
           "compProps": {
             "toolbar": [
               {
                 "id": "top_toolbar",
-                "url": "/page/toolbar?id=Base"
+                "url": "/page/toolbar?id=Audit_Statistics"
               }
             ],
             "table": {
               "url": "/{{api_project}}/session/list",
               "columnsUrl": "/page/table_column?id=Session_Statistics",
               "pagination": {
-                "enable": true
+                "enable": true,
+                "layout": "prev, pager, next"
               },
               "expand": {
                 "enable": false
               }
+            },
+            "chart": {
+              "url": "/{{api_project}}/sql/get_chart"
             }
           }
         },
         {
           "name": "risk",
           "label": "风险情况",
-          "component": "general/Table",
+          "component": "general/ChartTable",
           "compProps": {
             "toolbar": [
               {
                 "id": "top_toolbar",
-                "url": "/page/toolbar?id=Base"
+                "url": "/page/toolbar?id=Audit_Statistics"
               }
             ],
             "table": {
               "url": "/{{api_project}}/risk/list",
               "columnsUrl": "/page/table_column?id=Risk_Statistics",
               "pagination": {
-                "enable": true
+                "enable": true,
+                "layout": "prev, pager, next"
               },
               "expand": {
                 "enable": false
               }
+            },
+            "chart": {
+              "url": "/{{api_project}}/sql/get_chart"
             }
           }
         }
@@ -164,23 +176,320 @@
   },
   "Sql_List": {
     "props": {
-      "toolbar": [],
-      "filters": [],
-      "table": {}
+      "toolbar": [
+        {
+          "id": "top_toolbar",
+          "url": "/page/toolbar?id=Condition_Table"
+        }
+      ],
+      "table": {
+        "autoLoadData": false,
+        "autoLoadColumns": true,
+        "url": "/{{api_project}}/sql/sql_list",
+        "columnsUrl": "/page/table_column?id=Sql_List",
+        "pagination": {
+          "enable": true,
+          "layout": "prev, pager, next"
+        },
+        "expand": {
+          "enable": false
+        }
+      },
+      "form": {
+        "formType": "filter",
+        "formRules": {},
+        "formItems": [
+          {
+            "name": "",
+            "row": [
+              {
+                "prop": "sql_type",
+                "label": "SQL操作指令",
+                "type": "select",
+                "clearable": false,
+                "span": 8,
+                "url": "/lov/get_lov?val=sql_type"
+              },
+              {
+                "prop": "ap_sys",
+                "label": "应用系统",
+                "type": "select",
+                "span": 8,
+                "url": "/lov/get_lov?val=ap_sys"
+              },
+              {
+                "prop": "client_ip",
+                "label": "数据库客户端IP",
+                "type": "select",
+                "span": 8,
+                "url": "/lov/get_lov?val=client_ip"
+              }
+            ]
+          },
+          {
+            "name": "",
+            "row": [
+              {
+                "prop": "sql_class",
+                "label": "SQL分类",
+                "type": "select",
+                "span": 8,
+                "url": "/lov/get_lov?val=sql_class",
+                "hidden": true
+              },
+              {
+                "prop": "class_elapse_utc",
+                "label": "SQL历时(范围)",
+                "type": "select",
+                "span": 8,
+                "url": "/lov/get_lov?val=class_elapse_utc",
+                "hidden": true
+              }
+            ]
+          },
+          {
+            "name": "",
+            "row": [
+              {
+                "prop": "dest_ip",
+                "label": "数据库服务器IP",
+                "type": "select",
+                "span": 8,
+                "url": "/lov/get_lov?val=dest_ip",
+                "hidden": true
+              },
+              {
+                "prop": "db_name",
+                "label": "数据库名称",
+                "type": "select",
+                "span": 8,
+                "url": "/lov/get_lov?val=db_name",
+                "hidden": true
+              },
+              {
+                "prop": "db_type",
+                "label": "数据库类型",
+                "type": "select",
+                "span": 8,
+                "url": "/lov/get_lov?val=db_type",
+                "hidden": true
+              }
+            ]
+          },
+          {
+            "name": "",
+            "row": [
+              {
+                "prop": "db_user",
+                "label": "数据库用户",
+                "type": "select",
+                "span": 8,
+                "url": "/lov/get_lov?val=db_user",
+                "hidden": true
+              },
+              {
+                "prop": "os_user",
+                "label": "操作系统用户",
+                "type": "select",
+                "span": 8,
+                "url": "/lov/get_lov?val=os_user",
+                "hidden": true
+              }
+            ]
+          },
+          {
+            "name": "",
+            "row": [
+              {
+                "prop": "tbs",
+                "label": "表清单",
+                "type": "input",
+                "span": 12,
+                "slots": [
+                  {
+                    "name": "prepend",
+                    "element": "div",
+                    "text": "包含",
+                    "clearable": false,
+                    "value": "MULTI_LIKE"
+                  }
+                ]
+              },
+              {
+                "prop": "cols",
+                "label": "SQL字段",
+                "type": "input",
+                "span": 12,
+                "slots": [
+                  {
+                    "name": "prepend",
+                    "element": "div",
+                    "text": "包含",
+                    "clearable": false,
+                    "value": "MULTI_LIKE"
+                  }
+                ],
+                "hidden": true
+              }
+            ]
+          },
+          {
+            "name": "",
+            "row": [
+              {
+                "prop": "sql_skeleton",
+                "label": "SQL模板",
+                "type": "input",
+                "span": 24,
+                "op": [
+                  "MULTI_LIKE"
+                ],
+                "slots": [
+                  {
+                    "name": "prepend",
+                    "element": "my-select",
+                    "clearable": false,
+                    "options": [
+                      { "value": "MULTI_LIKE", "label": "MULTI_LIKE"},
+                      { "value": "LIKE", "label": "LIKE"}
+                    ],
+                    "value": "MULTI_LIKE"
+                  }
+                ],
+                "hidden": true
+              }
+            ]
+          }
+        ],
+        "foldItems": ["sql_class", "class_elapse_utc", "dest_ip", "db_name", "db_type", "db_user", "os_user", "sql_skeleton", "cols"]
+      }
     }
   },
   "Session_List": {
     "props": {
-      "toolbar": [],
-      "filters": [],
-      "table": {}
+      "toolbar": [
+        {
+          "id": "top_toolbar",
+          "url": "/page/toolbar?id=Condition_Table"
+        }
+      ],
+      "table": {
+        "autoLoadData": false,
+        "autoLoadColumns": true,
+        "url": "/{{api_project}}/session/session_list",
+        "columnsUrl": "/page/table_column?id=Session_List",
+        "pagination": {
+          "enable": true,
+          "layout": "prev, pager, next"
+        },
+        "expand": {
+          "enable": false
+        }
+      },
+      "form": {
+        "formType": "filter",
+        "formRules": {},
+        "formItems": [
+          {
+            "name": "",
+            "row": [
+              {
+                "prop": "client_ip",
+                "label": "数据库客户端IP",
+                "type": "select",
+                "span": 8,
+                "url": "/lov/get_lov?val=client_ip"
+              },
+              {
+                "prop": "db_user",
+                "label": "数据库用户",
+                "type": "select",
+                "span": 8,
+                "url": "/lov/get_lov?val=db_user"
+              },
+              {
+                "prop": "class_elapse_utc",
+                "label": "SQL历时(范围)",
+                "type": "select",
+                "span": 8,
+                "url": "/lov/get_lov?val=class_elapse_utc"
+              },
+              {
+                "prop": "exec_status",
+                "label": "SQL执行状态",
+                "type": "select",
+                "span": 8,
+                "clearable": false,
+                "url": "/lov/get_lov?val=exec_status"
+              }
+            ]
+          }
+        ],
+        "foldItems": []
+      }
     }
   },
   "Risk_List": {
     "props": {
-      "toolbar": [],
-      "filters": [],
-      "table": {}
+      "toolbar": [
+        {
+          "id": "top_toolbar",
+          "url": "/page/toolbar?id=Condition_Table"
+        }
+      ],
+      "table": {
+        "autoLoadData": false,
+        "autoLoadColumns": true,
+        "url": "/{{api_project}}/risk/risk_list",
+        "columnsUrl": "/page/table_column?id=Risk_List",
+        "pagination": {
+          "enable": true,
+          "layout": "prev, pager, next"
+        },
+        "expand": {
+          "enable": false
+        }
+      },
+      "form": {
+        "formType": "filter",
+        "formRules": {},
+        "formItems": [
+          {
+            "name": "",
+            "row": [
+              {
+                "prop": "risk_name",
+                "label": "风险名称",
+                "type": "select",
+                "span": 8,
+                "url": "/lov/get_lov?val=risk_name"
+              },
+              {
+                "prop": "risk_type",
+                "label": "风险类型",
+                "type": "select",
+                "span": 8,
+                "url": "/lov/get_lov?val=risk_type"
+              },
+              {
+                "prop": "risk_level",
+                "label": "风险等级",
+                "type": "select",
+                "span": 8,
+                "url": "/lov/get_lov?val=risk_level"
+              },
+              {
+                "prop": "status",
+                "label": "状态",
+                "type": "select",
+                "span": 8,
+                "url": "/lov/get_lov?val=risk_status"
+              }
+            ]
+          }
+        ],
+        "foldItems": []
+      }
     }
   }
 }

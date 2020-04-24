@@ -80,7 +80,7 @@ export default {
     },
     getValue () {
       let data
-      this.model.validate(async (valid) => {
+      this.model.validate((valid) => {
         if (!valid) {
           data = false
         } else {

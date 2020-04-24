@@ -18,6 +18,18 @@ const renders = {
 
       }
     })
+  },
+  'my-date-range': function (createElement, emitEventHandler, item) {
+    return createElement('my-date-range', {
+      ref: item.id,
+      refInFor: true,
+      props: item,
+      on: {
+        'change': () => {
+          emitEventHandler('date#change')
+        }
+      }
+    })
   }
 }
 export default renders

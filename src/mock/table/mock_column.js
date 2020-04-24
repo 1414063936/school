@@ -259,14 +259,14 @@ const columns = {
   ],
   'Session_Statistics': [
     {
-      prop: 'session_status',
+      prop: 'exec_status',
       label: '会话状态'
     },
     {
       prop: 'count',
       label: '总数',
       postLink: '/Audit/Session_List',
-      params: ['session_status']
+      params: ['exec_status']
     }
   ],
   'Risk_Statistics': [
@@ -287,6 +287,178 @@ const columns = {
       label: '总数',
       postLink: '/Audit/Risk_list',
       params: ['risk_name', 'risk_level', 'risk_type']
+    }
+  ],
+  'Sql_List': [
+    {
+      prop: 'ap_sys',
+      label: '应用系统'
+    },
+    {
+      prop: 'db_name',
+      label: '数据库名称'
+    },
+    {
+      prop: 'os_user',
+      label: '操作系统用户'
+    },
+    {
+      prop: 'db_user',
+      label: '数据库用户'
+    },
+    {
+      minWidth: '300px',
+      showOverflowTooltip: true,
+      prop: 'sql_statement',
+      label: 'SQL语句'
+    },
+    {
+      prop: 'operations',
+      label: '操作',
+      width: '100px',
+      widget: 'operations',
+      fixed: 'right',
+      props: {
+        type: 'dropdown',
+        options: [
+          {
+            element: 'my-dialog-button',
+            props: {
+              id: 'open',
+              label: '语句详情',
+              type: 'text',
+              size: 'mini',
+
+              title: '语句详情',
+              component: 'Temp',
+              compProps: {
+                text: '内容'
+              }
+            }
+          },
+          {
+            element: 'my-dialog-button',
+            props: {
+              id: 'open',
+              label: '会话详情',
+              type: 'text',
+              size: 'mini',
+
+              title: '会话详情',
+              component: 'Temp',
+              compProps: {
+                text: '内容'
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  'Session_List': [
+    {
+      prop: 'client_ip',
+      label: '数据库客户端IP'
+    },
+    {
+      prop: 'db_user',
+      label: '数据库用户'
+    },
+    {
+      prop: 'os_user',
+      label: '操作系统用户'
+    },
+    {
+      prop: 'sql_client_program',
+      label: '客户端工具'
+    },
+    {
+      prop: 'exec_utc',
+      label: 'SQL执行时间'
+    },
+    {
+      prop: 'end_utc',
+      label: '结束时间'
+    },
+    {
+      prop: 'elapse_utc',
+      label: 'SQL历时(秒)'
+    },
+    {
+      prop: 'operations',
+      label: '操作',
+      width: '100px',
+      widget: 'operations',
+      fixed: 'right',
+      props: {
+        type: 'dropdown',
+        options: [
+          {
+            element: 'my-dialog-button',
+            props: {
+              id: 'open',
+              label: '会话详情',
+              type: 'text',
+              size: 'mini',
+
+              title: '会话详情',
+              component: 'Temp',
+              compProps: {
+                text: '内容'
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  'Risk_List': [
+    {
+      prop: 'creation_date',
+      label: '创建时间'
+    },
+    {
+      prop: 'risk_name',
+      label: '风险名称'
+    },
+    {
+      prop: 'risk_level',
+      label: '风险等级'
+    },
+    {
+      prop: 'risk_type',
+      label: '风险类型'
+    },
+    {
+      prop: 'status',
+      label: '状态'
+    },
+    {
+      prop: 'operations',
+      label: '操作',
+      width: '100px',
+      widget: 'operations',
+      fixed: 'right',
+      props: {
+        type: 'dropdown',
+        options: [
+          {
+            element: 'my-dialog-button',
+            props: {
+              id: 'open',
+              label: '风险详情',
+              type: 'text',
+              size: 'mini',
+
+              title: '风险详情',
+              component: 'Temp',
+              compProps: {
+                text: '内容'
+              }
+            }
+          }
+        ]
+      }
     }
   ]
 }

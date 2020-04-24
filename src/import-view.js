@@ -4,7 +4,9 @@
 import Vue from 'vue'
 
 const items = [
-  {name: 'Table', from: () => import('@/views/general/Table')}
+  {name: 'Table', from: () => import('@/views/general/Table')},
+  {name: 'ChartTable', from: () => import('@/views/general/ChartTable')},
+  {name: 'Temp', from: () => import('@/views/general/Temp')}
 ]
 
 const importComponent = (items) => {

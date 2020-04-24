@@ -47,7 +47,7 @@
             <span v-if="column.widget !== undefined">
               <column-render :column="column" :row="scope.row" :emitFunc="emitEventHandler"></column-render>
             </span>
-            <span class="data-link" v-if="column.postLink" style="color: #409eff;">
+            <span class="data-link" v-else-if="column.postLink" style="color: #409eff;">
               <router-link
                 :to="{
                   path: column.postLink,
@@ -64,6 +64,7 @@
     </div>
     <div class="my-pagination-wrapper" v-if="showPagination">
       <el-pagination
+        hide-on-single-page
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
         :current-page="internalCurrentPage"
@@ -212,6 +213,7 @@ export default {
       internalPageSizes: this.pageSizes,
       internalHeight: this.height,
       currentRow: false,
+      params: {},
       total: 0,
       selection: [],
       tablesHeight: Number
@@ -236,7 +238,7 @@ export default {
     this.$nextTick(() => {
       const tableHeight = this.$refs[this.ref].$el.offsetHeight
       if (!this.height && this.heightFit) {
-        this.internalHeight = tableHeight
+        this.internalHeight = tableHeight - 1
       }
 
       if (this.showPagination && this.autoComputedPageSize) {
@@ -253,6 +255,7 @@ export default {
       immediate: true,
       handler: function (val) {
         this.internalData = JSON.parse(JSON.stringify(val))
+        this.total = this.internalData.length
       }
     },
     columns: {
@@ -290,12 +293,14 @@ export default {
     },
     loadDataHandler () {
       let _params = {}
+      Object.assign(_params, this.params)
 
       if (this.showPagination) {
         _params.offset = (this.internalCurrentPage - 1) * this.internalPageSize
         _params.pageSize = this.internalPageSize
       }
 
+      console.log(_params)
       this.$axios.get(this.url, {params: _params}).then(response => {
         const { data, count } = response.data
         this.internalData = data
@@ -337,17 +342,21 @@ export default {
         this.loadDataHandler()
       }
     },
+    getPagination () {
+      return {
+        currentPage: this.internalCurrentPage,
+        pageSize: this.internalPageSize
+      }
+    },
     handleCurrentChange (val) {
       this.internalCurrentPage = val
       if (this.autoLoadData) {
         this.loadDataHandler()
       }
     },
-    onResize (el) {
-      // console.log(el.offsetHeight)
-      this.tablesHeight = el.offsetHeight
-      if (this.heightFit) {
-        this.internalHeight = this.tablesHeight
+    setParams (params) {
+      if (params) {
+        this.params = params
       }
     },
     setUrlParams (row, list) {
@@ -357,6 +366,13 @@ export default {
       })
 
       return params
+    },
+    onResize (el) {
+      // console.log(el.offsetHeight)
+      this.tablesHeight = el.offsetHeight
+      if (this.heightFit) {
+        this.internalHeight = this.tablesHeight - 1
+      }
     }
   }
 }

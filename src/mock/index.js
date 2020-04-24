@@ -9,6 +9,7 @@ import Student from './temp/student'
 import Teacher from './temp/teacher'
 import Audit from './temp/audit'
 import NotifyServer from './temp/notifyServer'
+import LOV from './temp/lov'
 
 Mock.setup({
   timeout: '50-100'
@@ -28,4 +29,12 @@ Mock.mock(/\/api\/sql\/list/, Audit.GET_SQL)
 Mock.mock(/\/api\/session\/list/, Audit.GET_SESSION)
 Mock.mock(/\/api\/risk\/list/, Audit.GET_RISK)
 
+Mock.mock(/\/api\/sql\/sql_list/, Audit.GET_SQL_LIST)
+Mock.mock(/\/api\/session\/session_list/, Audit.GET_SESSION_LIST)
+Mock.mock(/\/api\/risk\/risk_list/, Audit.GET_RISK_LIST)
+
+Mock.mock(/\/api\/sql\/get_chart/, Audit.GET_SQL_CHART)
+
 Mock.mock(/\/api\/notifyServer\/list/, NotifyServer.GET)
+
+Mock.mock(/\/lov\/get_lov/, LOV.GET)

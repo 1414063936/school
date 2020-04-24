@@ -74,7 +74,7 @@ export default {
     ...mapGetters(['system', 'apiProject'])
   },
   mounted () {
-
+    this.$refs['autoTable'].setParams(this.getParams())
   },
   methods: {
     emitEventHandler (event) {
@@ -91,7 +91,24 @@ export default {
       console.log(row)
     },
     refreshData () {
+      this.$refs['autoTable'].setParams(this.getParams())
       this.$refs['autoTable'].refreshData()
+    },
+    getParams () {
+      const _params = {}
+
+      const dateRange = this.$refs[this.toolbar[0].id].trigger('dateRange', 'getDateRange')
+      if (dateRange === null) {
+        this.$message({
+          type: 'warning',
+          message: '请选择查询时间'
+        })
+        return false
+      } else if (dateRange) {
+        _params['beginDate'] = dateRange[0]
+        _params['endDate'] = dateRange[1]
+      }
+      return _params
     }
   }
 }

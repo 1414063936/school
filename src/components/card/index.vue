@@ -1,6 +1,6 @@
 <template>
-  <div class="my-card" ref="MyCard">
-    <el-card :body-style="{'height': bodyHeight, 'overflow': 'auto'}">
+  <div class="card-container">
+    <el-card :ref="ref" :body-style="{'height': bodyHeight, 'overflow': 'auto'}">
       <div slot="header" v-if="$slots.header" ref="cardHeader">
         <slot name="header"></slot>
       </div>
@@ -23,6 +23,7 @@ export default {
   },
   data () {
     return {
+      ref: 'card',
       bodyHeight: 'calc(100% - 33px)'
     }
   },
@@ -40,7 +41,7 @@ export default {
 </script>
 
 <style scoped>
-  .my-card {
+  .card-container {
     height: 100%;
     width: 100%;
   }

@@ -82,7 +82,7 @@ export default {
       if (comps && comps.length > 0) {
         const comp = comps[0]
         if (comp) {
-          comp[method](...args)
+          return comp[method](...args)
         }
       }
     },

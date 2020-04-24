@@ -8,6 +8,7 @@
   "change_user": "帐号修改",
   "logout": "退出登录",
   "btn_add": "添加",
+  "btn_filter": "过滤",
   "menu": {
     "Home": "主页",
     "Student": "学生信息",
