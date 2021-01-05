@@ -15,7 +15,7 @@
   "dependencies": {
     "@form-create/element-ui": "^1.0.9",
     "@xunlei/vuex-connector": "^0.3.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "echarts": "^4.7.0",
     "element-ui": "^2.13.0",
     "handlebars": "^4.7.3",
